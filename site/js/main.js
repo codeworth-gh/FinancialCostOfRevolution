@@ -24,6 +24,11 @@ const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
 const NUM_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
 
+const RATES = {
+    usd: "https://www.boi.org.il/roles/markets/%D7%A9%D7%A2%D7%A8%D7%99-%D7%97%D7%9C%D7%99%D7%A4%D7%99%D7%9F-%D7%99%D7%A6%D7%99%D7%92%D7%99%D7%9D/%D7%93%D7%95%D7%9C%D7%A8-%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%A0%D7%99/",
+    eur: "https://www.boi.org.il/roles/markets/%D7%A9%D7%A2%D7%A8%D7%99-%D7%97%D7%9C%D7%99%D7%A4%D7%99%D7%9F-%D7%99%D7%A6%D7%99%D7%92%D7%99%D7%9D/%D7%90%D7%99%D7%A8%D7%95/"
+};
+
 function setup(){
     // build controls
     controls.fld.tlv125 = document.getElementById("fldTlv125");
@@ -66,7 +71,7 @@ function updateScrapedData(){
 
 function updateResults() {
     if ( ! ready ) return;
-    
+
     let familySize = Number(controls.fld.familySize.value);
     let avgSpend = Number(controls.fld.monthlySpend.value);
     let savings =  Number(controls.fld.savings.value);
@@ -91,3 +96,4 @@ function updateResults() {
     controls.results.familyCost.innerHTML = CUR_FORMAT.format(myFamilyLoss);
     controls.results.marketCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
 }
+
