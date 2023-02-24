@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row my-2">
+            <div class="col">
+                <h1>כמה זה עולה לנו</h1>
+                <div class="alert alert-info">
+                    דף לחישוב הנזק הכלכלי שההפיכה גורמת - בחישוב אישי
+                </div>
+                <div class="alert alert-success">
+                    החישובים שאתם עושים באתר זה פרטיים לחלוטין - אתר זה לא אוסף את הנתונים המוזנים, לא שומר אותם ולא מדווח עליהם לשום גורם.
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-sm">
+                <h2>נתוני מקרו <img src="loader.gif" alt="Loader image" id="imgLoader" height="26"></h2>
+                <div class="mb-3 row">
+                    <label for="fldTlv125" class="col-sm-3 col-form-label">תל אביב 125</label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly class="form-control" id="fldTlv125" value="????" autocomplete="off">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="fldSnP500" class="col-sm-3 col-form-label">S&P 500</label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly class="form-control" id="fldSnP500" value="????" autocomplete="off">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="fldIlsUsd" class="col-sm-3 col-form-label">שער הדולר היציג</label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly class="form-control" id="fldIlsUsd" value="????" autocomplete="off">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="fldIldEur" class="col-sm-3 col-form-label">שער היורו היציג</label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly class="form-control" id="fldIlsEur" value="????" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h2>המשפחה שלי</h2>
+                <div class="mb-3 row">
+                    <label for="fldFamilySize" class="col-sm-5 col-form-label">מס׳ נפשות במשפחה</label>
+                    <div class="col-sm-6">
+                        <input type="range" min="1" max="20" autocomplete="off" class="form-range" oninput="updateResults()" id="fldFamilySize" value="3">
+                    </div>
+                    <label id="lblFamilySize" class="col-sm-1 col-form-label">3</label>
+                </div>
+                <div class="mb-3 row">
+                    <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הוצאה חודשית ממוצעת</label>
+                    <div class="col-sm-7">
+                        <input type="number" oninput="updateResults()"  class="form-control" id="fldMonthlySpend" value="1234">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="fldSavedMoney" class="col-sm-5 col-form-label">חסכונות (פנסיה ואחרים)</label>
+                    <div class="col-sm-7">
+                        <input type="number" oninput="updateResults()" class="form-control" id="fldSavedMoney" value="1234">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md">
+                <h2>עלות למשפחה שלי</h2>
+                <h3>תוספת עלות שנתית</h3>
+                <div class="calcResult" id="yearlyCostFamily">
+                    ---
+                </div>
+                <h3 class="mt-1">הפסדים בשוק ההון</h3>
+                <div class="calcResult" id="capMarketLossFamily">
+                    ---
+                </div>
+            </div>
+            <div class="col-md">
+                <h2>עלות למשק</h2>
+                <h3>תוספת עלות למשפחה ממוצעת</h3>
+                <div class="calcResult" id="yearlyCostAll">
+                    ---
+                </div>
+                <h3 class="mt-1">הפסדים בשוק ההון</h3>
+                <div class="calcResult" id="capMarketLossAll">
+                    ---
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>איך חישבנו</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quasi delectus dolor quod iusto aliquid asperiores nihil? Eius, aspernatur. Atque, nisi. Accusamus reiciendis iusto doloribus ratione, voluptatum error non assumenda aspernatur maxime facilis nulla blanditiis inventore modi, porro excepturi eum est? Illum odio, architecto molestiae ab repudiandae voluptate voluptatibus ipsam similique sint eum doloremque exercitationem?
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    טכנולוגיות בשימוש:
+                    <ul>
+                        <li><a href="https://getbootstrap.com">Bootstrap</a></li>
+                        <li><a href="http://alef.hagilda.com/">פונט אלף (הגילדה)</a></li>
+                        <li><a href="https://www.dafont.com/chase.d3575?text=12%2C345.67">Liquid Crystal by Chess Babb</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        if ( document.readyState!=='loading' ){
+            // document loaded; execute now
+            setup();
+        } else {
+            document.addEventListener('DOMContentLoaded', setup);
+        }
+    </script>
+  </body>
+</html>
