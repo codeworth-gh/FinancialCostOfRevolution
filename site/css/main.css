@@ -36,8 +36,28 @@ footer {
 
 footer ul {
     list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer ul li {
     display: inline-block;
+}
+
+footer ul li a {
+    display: block;
+    text-decoration: none;
+    padding: .5em;
+    margin: .1em .5em;
+}
+
+footer ul li a:hover {
+    background-color: #000;
+    color:rgb(188, 188, 248);
+}
+
+footer ul li a:active {
+    background-color: #A00;
+    color:#FF0;
 }

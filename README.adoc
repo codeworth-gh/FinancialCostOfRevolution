@@ -3,6 +3,7 @@
 This project helps people get a tangible grip of how much the revolution in Israel is costing families in Israel, based on financial family data and some hard statistics from https://www.boi.org.il[Bank of Israel].
 
 Authors:
+
 * Shula Pesach
 * Boaz Levi
 * Gill Beeri
