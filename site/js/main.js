@@ -17,8 +17,8 @@ const AVG_FAMILY_SIZE = 3.72;
 const AVG_PERSON_YR_SPEND = 91162;
 const TLV_125_START = 1815.76;
 const SNP_500_START = 3852.97;
-const ILS_USD_START = 3.74;
-const ILS_EUR_START = 3.527;
+const ILS_USD_START = 3.527;
+const ILS_EUR_START = 3.74;
 const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 
 const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
@@ -89,11 +89,17 @@ function updateResults() {
 
     // Monthly Loss
     let usdChange = ilsUsd/ILS_USD_START-1;
+    console.log(`usdChange = ${usdChange}`);
     let eurChange = ilsEur/ILS_EUR_START-1;
+    console.log(`eurChange = ${eurChange}`);
     let changeAvg = (usdChange + eurChange)/2;
+    console.log(`changeAvg = ${changeAvg}`);
     let myFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
     let avgFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
     controls.results.familyCost.innerHTML = CUR_FORMAT.format(myFamilyLoss);
     controls.results.marketCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
 }
 
+function scrape(currency) {
+
+}
