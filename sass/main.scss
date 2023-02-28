@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+@font-face {
+    font-family: 'LiquidCrystal';
+        src: url('LiquidCrystal-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+body {
+    direction: rtl;
+    font-family: "Alef Hebrew",
+               "Helvetica Neue",
+               Helvetica,
+               Arial,
+               sans-serif;
+}
+
+.calcResult {
+    font-family: "LiquidCrystal", "SF Mono", "Courier";
+    background-color: #BFD;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 18pt;
+    box-shadow: 0 4px 8px rgba(0,0,0,.25) inset;
+    padding: 5px 10px;
+}
+
+footer {
+    font-size: 0.7em;
+    background-color: rgb(188, 188, 248);
+    border-top: 2px solid #BBB;
+    margin-top: 1em;
+    padding: 1em;
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        li{
+            display: inline-block;
+            a {
+                display: block;
+                text-decoration: none;
+                padding: .5em;
+                margin: .1em .5em;
+                &:hover {
+                    background-color: #000;
+                    color:rgb(188, 188, 248);
+                }
+                &:active {
+                    background-color: #A00;
+                    color:#FF0;
+                }
+            }
+        }
+    }
+}
