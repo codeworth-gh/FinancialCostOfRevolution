@@ -47,6 +47,10 @@ header {
     padding: 5px 10px;
 }
 
+input.form-control {
+    text-align: right;
+}
+
 footer {
     font-size: 0.7em;
     background-color: desaturate($israelBlue, 10);

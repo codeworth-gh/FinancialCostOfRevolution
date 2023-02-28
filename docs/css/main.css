@@ -39,6 +39,10 @@ header h2 {
   padding: 5px 10px;
 }
 
+input.form-control {
+  text-align: right;
+}
+
 footer {
   font-size: 0.7em;
   background-color: #1e2aed;

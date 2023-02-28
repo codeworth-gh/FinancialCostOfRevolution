@@ -13,8 +13,8 @@ const AVG_FAMILY_SIZE = 3.72;
 const AVG_PERSON_YR_SPEND = 91162;
 const TA_125_START = 1815.76;
 const GSPC_START = 3852.97;
-const ILS_USD_START = 3.527;
-const ILS_EUR_START = 3.74;
+const USD_ILS_START = 3.527;
+const EUR_ILS_START = 3.74;
 const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 
 const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
@@ -31,7 +31,7 @@ function setup(){
     controls.fld.savings = document.getElementById("fldSavedMoney");
     
     controls.lbl.familySize = document.getElementById("lblFamilySize");
-
+    
     controls.results.avgFamilyLoss = document.getElementById("avgFamilyLoss");
     controls.results.myFamilyLoss = document.getElementById("myFamilyLoss");
     controls.results.avgFamilyCost = document.getElementById("avgFamilyCost");
@@ -40,15 +40,38 @@ function setup(){
     // init the monthly spend input to a 3-person family
     controls.fld.monthlySpend.value = Math.round(3*AVG_PERSON_YR_SPEND/12);
 
+    makeNumberField(controls.fld.monthlySpend);
+    makeNumberField(controls.fld.savings);
     updateScrapedData();
 }
 
-function updateScrapedData(){
-    controls.fld.ilsUsd.value = USD_ILS;
-    controls.fld.ilsEur.value = EUR_ILS;
-    controls.fld.tlv125.value = TA_125;
-    controls.fld.snp500.value = GSPC;
+function formattedStringToNum( str ) {
+    return Number(str.replaceAll(/[^0-9]/g,""));
+}
 
+function makeNumberField( fld ) {
+    
+    fld.addEventListener("focusin", function(e){
+        fld.value = formattedStringToNum(fld.value);
+        fld.select();
+    });
+    fld.addEventListener("focusout", function(e){
+        const rawVal = fld.value;
+        fld.value = CUR_FORMAT.format(Number(rawVal));
+    });
+}
+
+function updateScrapedData(){
+    document.getElementById("tdTA125").innerHTML=TA_125;
+    document.getElementById("tdTA125Start").innerHTML=TA_125_START;
+    document.getElementById("tdGspc").innerHTML=GSPC;
+    document.getElementById("tdGspcStart").innerHTML=GSPC_START;
+    document.getElementById("tdUsdIls").innerHTML=USD_ILS;
+    document.getElementById("tdUsdIlsStart").innerHTML=USD_ILS_START;
+    document.getElementById("tdEurIls").innerHTML=EUR_ILS;
+    document.getElementById("tdEurIlsStart").innerHTML=EUR_ILS_START;
+    document.getElementById("tdUpdateDate").innerHTML=SAMPLE_TIME;
+    
     ready = true;
     updateResults();
 }
@@ -57,8 +80,8 @@ function updateResults() {
     if ( ! ready ) return;
 
     let familySize = Number(controls.fld.familySize.value);
-    let avgSpend = Number(controls.fld.monthlySpend.value);
-    let savings =  Number(controls.fld.savings.value);
+    let avgSpend = formattedStringToNum(controls.fld.monthlySpend.value);
+    let savings =  formattedStringToNum(controls.fld.savings.value);
     
     controls.lbl.familySize.innerHTML = String(familySize);
 
@@ -74,12 +97,12 @@ function updateResults() {
     controls.results.myFamilyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
 
     // Yearly Cost
-    let usdChange = USD_ILS/ILS_USD_START-1;
-    console.log(`usdChange = ${usdChange}`);
-    let eurChange = EUR_ILS/ILS_EUR_START-1;
-    console.log(`eurChange = ${eurChange}`);
+    let usdChange = USD_ILS/USD_ILS_START-1;
+    // console.log(`usdChange = ${usdChange}`);
+    let eurChange = EUR_ILS/EUR_ILS_START-1;
+    // console.log(`eurChange = ${eurChange}`);
     let changeAvg = (usdChange + eurChange)/2;
-    console.log(`changeAvg = ${changeAvg}`);
+    // console.log(`changeAvg = ${changeAvg}`);
     let myFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
     let avgFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
     controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
