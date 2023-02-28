@@ -10,6 +10,25 @@ body {
   font-family: "Alef Hebrew", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+header {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #121FF9;
+}
+header h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+header h2 {
+  margin: 1em 0;
+  background-color: white;
+  color: #121FF9;
+  text-align: center;
+  padding: 0.2em 0;
+}
+
 .calcResult {
   font-family: "LiquidCrystal", "SF Mono", "Courier";
   background-color: #BFD;
@@ -22,16 +41,17 @@ body {
 
 footer {
   font-size: 0.7em;
-  background-color: rgb(188, 188, 248);
-  border-top: 2px solid #BBB;
+  background-color: #1e2aed;
+  border-top: 2px solid #121FF9;
   margin-top: 1em;
   padding: 1em;
+  color: white;
 }
 footer ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 footer ul li {
   display: inline-block;
@@ -44,7 +64,7 @@ footer ul li a {
 }
 footer ul li a:hover {
   background-color: #000;
-  color: rgb(188, 188, 248);
+  color: rgb(220, 220, 255);
 }
 footer ul li a:active {
   background-color: #A00;

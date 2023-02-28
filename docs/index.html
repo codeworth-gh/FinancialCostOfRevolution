@@ -8,21 +8,101 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <header>
+        <div class="container-fluid p-0">
+            <h1>כמה זה עולה לנו</h1>
+            <h2>
+                כמה נזקים כלכליים נגרמו לציבור הישראלי מאז הצגת המהפכה (״רפורמה״) המשפטית?
+            </h2>
+        </div>
+    </header>
     <div class="container">
-        <div class="row my-2">
+        <div class="row my-5">
             <div class="col">
-                <h1>כמה זה עולה לנו</h1>
-                <div class="alert alert-info">
-                    דף לחישוב הנזק הכלכלי שההפיכה גורמת - בחישוב אישי
+                <h3>נזקים ישירים למשפחה ממוצעת כתוצאה מנפילת שוק המניות</h3>
+            </div>
+            <div class="col">
+                <div class="calcResult" id="avgFamilyLoss">???</div>
+            </div>
+            <div class="col">
+                <a href="#explanation" class="btn btn-info">איך חישבנו</a>
+                <button type="button" class="btn btn-success" 
+                        data-bs-toggle="collapse" data-bs-target="#myFamilyLossCtnr"
+                        aria-expanded="false" aria-controls="myFamilyLossCtnr">חשב נזק למשפחה שלי</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="collapse" id="myFamilyLossCtnr">
+                    <div class="card card-body">
+                        <div class="mb-3 row">
+                            <label for="fldSavedMoney" class="col-sm-5 col-form-label">כמה כסף חסכת בקרנות פנסיה, קרנות השתלמות קופות גמל וחסכונות אחרים</label>
+                            <div class="col-sm-7">
+                                <input type="number" oninput="updateResults()" class="form-control" id="fldSavedMoney" value="300000">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-5 col-form-label">ההפסד המוערך שלך</label>
+                            <div class="col-sm-7">
+                                <div class="calcResult" id="myFamilyLoss">1000</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="alert alert-success">
-                    החישובים שאתם עושים באתר זה פרטיים לחלוטין - אתר זה לא אוסף את הנתונים המוזנים, לא שומר אותם ולא מדווח עליהם לשום גורם.
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <h3>תוספת עלות שנתית ליוקר המחיה של משפחה ממוצעת</h3>
+            </div>
+            <div class="col">
+                <div class="calcResult" id="avgFamilyCost">???</div>
+            </div>
+            <div class="col">
+                <a href="#explanation" class="btn btn-info">איך חישבנו</a>
+                <button type="button" class="btn btn-success" 
+                        data-bs-toggle="collapse" data-bs-target="#myFamilyCostCtnr"
+                        aria-expanded="false" aria-controls="myFamilyCostCtnr">חשב נזק למשפחה שלי</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="collapse" id="myFamilyCostCtnr">
+                    <div class="card card-body">
+                        <div class="mb-3 row">
+                            <label for="fldFamilySize" class="col-sm-5 col-form-label">מס׳ נפשות במשפחה</label>
+                            <div class="col-sm-6">
+                                <input type="range" min="1" max="20" autocomplete="off" class="form-range" oninput="updateResults()" id="fldFamilySize" value="3">
+                            </div>
+                            <label id="lblFamilySize" class="col-sm-1 col-form-label">3</label>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הוצאה חודשית ממוצעת</label>
+                            <div class="col-sm-7">
+                                <input type="number" oninput="updateResults()"  class="form-control" id="fldMonthlySpend" value="1234">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-5 col-form-label">הערכת תוספת עלות שנתית (ל-2023)</label>
+                            <div class="col-sm-7">
+                                <div class="calcResult" id="myFamilyCost">???</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 id="explanation">איך חישבנו</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quasi delectus dolor quod iusto aliquid asperiores nihil? Eius, aspernatur. Atque, nisi. Accusamus reiciendis iusto doloribus ratione, voluptatum error non assumenda aspernatur maxime facilis nulla blanditiis inventore modi, porro excepturi eum est? Illum odio, architecto molestiae ab repudiandae voluptate voluptatibus ipsam similique sint eum doloremque exercitationem?
+                </p>
             </div>
         </div>
         <div class="row my-2">
             <div class="col-sm">
-                <h2>נתוני מקרו <img src="loader.gif" alt="Loader image" id="imgLoader" height="26"></h2>
+                <h2>נתוני מקרו</h2>
                 <div class="mb-3 row">
                     <label for="fldTlv125" class="col-sm-3 col-form-label">תל אביב 125</label>
                     <div class="col-sm-9">
@@ -48,66 +128,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
-                <h2>המשפחה שלי</h2>
-                <div class="mb-3 row">
-                    <label for="fldFamilySize" class="col-sm-5 col-form-label">מס׳ נפשות במשפחה</label>
-                    <div class="col-sm-6">
-                        <input type="range" min="1" max="20" autocomplete="off" class="form-range" oninput="updateResults()" id="fldFamilySize" value="3">
-                    </div>
-                    <label id="lblFamilySize" class="col-sm-1 col-form-label">3</label>
-                </div>
-                <div class="mb-3 row">
-                    <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הוצאה חודשית ממוצעת</label>
-                    <div class="col-sm-7">
-                        <input type="number" oninput="updateResults()"  class="form-control" id="fldMonthlySpend" value="1234">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="fldSavedMoney" class="col-sm-5 col-form-label">חסכונות (פנסיה ואחרים)</label>
-                    <div class="col-sm-7">
-                        <input type="number" oninput="updateResults()" class="form-control" id="fldSavedMoney" value="1000000">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row my-2">
-            <div class="col-md">
-                <h2>עלות למשפחה שלי</h2>
-                <h3>תוספת עלות שנתית</h3>
-                <div class="calcResult" id="yearlyCostFamily">
-                    ---
-                </div>
-                <h3 class="mt-1">הפסדים בשוק ההון</h3>
-                <div class="calcResult" id="capMarketLossFamily">
-                    ---
-                </div>
-            </div>
-            <div class="col-md">
-                <h2>עלות למשק</h2>
-                <h3>תוספת עלות למשפחה ממוצעת</h3>
-                <div class="calcResult" id="yearlyCostAll">
-                    ---
-                </div>
-                <h3 class="mt-1">הפסדים בשוק ההון</h3>
-                <div class="calcResult" id="capMarketLossAll">
-                    ---
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h2>איך חישבנו</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quasi delectus dolor quod iusto aliquid asperiores nihil? Eius, aspernatur. Atque, nisi. Accusamus reiciendis iusto doloribus ratione, voluptatum error non assumenda aspernatur maxime facilis nulla blanditiis inventore modi, porro excepturi eum est? Illum odio, architecto molestiae ab repudiandae voluptate voluptatibus ipsam similique sint eum doloremque exercitationem?
-                </p>
-            </div>
         </div>
     </div>
     <footer>
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col text-center">
+                    החישובים שאתם עושים באתר זה פרטיים לחלוטין - אתר זה לא אוסף את הנתונים המוזנים, לא שומר אותם ולא מדווח עליהם לשום גורם.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
                     טכנולוגיות בשימוש:
                     <ul>
                         <li><a href="https://getbootstrap.com">Bootstrap</a></li>

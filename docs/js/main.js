@@ -32,13 +32,11 @@ function setup(){
     
     controls.lbl.familySize = document.getElementById("lblFamilySize");
 
-    controls.loader = document.getElementById("imgLoader");
-
-    controls.results.familyCost = document.getElementById("yearlyCostFamily");
-    controls.results.marketCost = document.getElementById("yearlyCostAll");
-    controls.results.familyLoss = document.getElementById("capMarketLossFamily");
-    controls.results.marketLoss = document.getElementById("capMarketLossAll");
-
+    controls.results.avgFamilyLoss = document.getElementById("avgFamilyLoss");
+    controls.results.myFamilyLoss = document.getElementById("myFamilyLoss");
+    controls.results.avgFamilyCost = document.getElementById("avgFamilyCost");
+    controls.results.myFamilyCost = document.getElementById("myFamilyCost");
+    
     // init the monthly spend input to a 3-person family
     controls.fld.monthlySpend.value = Math.round(3*AVG_PERSON_YR_SPEND/12);
 
@@ -46,8 +44,6 @@ function setup(){
 }
 
 function updateScrapedData(){
-    controls.loader.classList.add("d-none");
-
     controls.fld.ilsUsd.value = USD_ILS;
     controls.fld.ilsEur.value = EUR_ILS;
     controls.fld.tlv125.value = TA_125;
@@ -66,16 +62,18 @@ function updateResults() {
     
     controls.lbl.familySize.innerHTML = String(familySize);
 
-    // Market Loss
+    // Cap Market Loss
     let tlvChange =  (TA_125/TA_125_START)-1;
     let snpChange =  (GSPC/GSPC_START)-1;
     let tlvVsSnp  =  (1+tlvChange)/(1+snpChange)-1;
     let totalMarketLoss = PUBLICLY_HELD_STOCK_VALUE*tlvVsSnp;
+    let lossPerPerson = totalMarketLoss/ISRAEL_POPULATION;
     let familyMarketLoss = tlvVsSnp*familySize*savings*AVG_STOCK_PART;
-    controls.results.familyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
-    controls.results.marketLoss.innerHTML = CUR_FORMAT.format(-totalMarketLoss);
+    let avgFamilyMarketLoss = lossPerPerson*AVG_FAMILY_SIZE;
+    controls.results.avgFamilyLoss.innerHTML = CUR_FORMAT.format(-avgFamilyMarketLoss);
+    controls.results.myFamilyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
 
-    // Monthly Loss
+    // Yearly Cost
     let usdChange = USD_ILS/ILS_USD_START-1;
     console.log(`usdChange = ${usdChange}`);
     let eurChange = EUR_ILS/ILS_EUR_START-1;
@@ -84,6 +82,6 @@ function updateResults() {
     console.log(`changeAvg = ${changeAvg}`);
     let myFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
     let avgFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
-    controls.results.familyCost.innerHTML = CUR_FORMAT.format(myFamilyLoss);
-    controls.results.marketCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
+    controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
+    controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyLoss);
 }

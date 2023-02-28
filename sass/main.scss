@@ -7,6 +7,8 @@
     font-style: italic;
 }
 
+$israelBlue: #121FF9;
+
 body {
     direction: rtl;
     font-family: "Alef Hebrew",
@@ -14,6 +16,25 @@ body {
                Helvetica,
                Arial,
                sans-serif;
+}
+
+header {
+    margin:0;
+    padding: 20px 0;
+    background-color: $israelBlue;
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+    }
+    h2 {
+        margin: 1em 0;
+        background-color: white;
+        color: $israelBlue;
+        text-align: center;
+        padding: .2em 0;
+    }
 }
 
 .calcResult {
@@ -28,15 +49,16 @@ body {
 
 footer {
     font-size: 0.7em;
-    background-color: rgb(188, 188, 248);
-    border-top: 2px solid #BBB;
+    background-color: desaturate($israelBlue, 10);
+    border-top: 2px solid $israelBlue;
     margin-top: 1em;
     padding: 1em;
+    color: white;
     ul {
         list-style: none;
         padding: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         li{
             display: inline-block;
             a {
@@ -46,7 +68,7 @@ footer {
                 margin: .1em .5em;
                 &:hover {
                     background-color: #000;
-                    color:rgb(188, 188, 248);
+                    color:rgb(220, 220, 255);
                 }
                 &:active {
                     background-color: #A00;
