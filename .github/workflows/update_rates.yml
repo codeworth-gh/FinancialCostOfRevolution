@@ -25,7 +25,6 @@ jobs:
 
       - name: Commit and push
         run: |
-          echo aaa > hilel.txt
           git config --global user.name 'update-rates.sh'
           git config --global user.email 'update-rates@noreply.codeworth-gh.com'
           git commit -am "update rates"
