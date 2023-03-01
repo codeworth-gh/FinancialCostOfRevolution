@@ -2,7 +2,7 @@ name: GitHubActions Job Schedule
 
 on:
   schedule: ## Schedule the job to run at 12.am daily.
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,4 +18,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: ./update-rates.sh
