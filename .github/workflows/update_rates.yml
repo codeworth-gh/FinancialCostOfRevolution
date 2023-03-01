@@ -22,3 +22,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ./update-rates.sh
+
+      - name: Commit and push
+        run: |
+          echo aaa > hilel.txt
+          git config --global user.name 'update-rates.sh'
+          git config --global user.email 'update-rates@noreply.codeworth-gh.com'
+          git commit -am "update rates"
+          git push
