@@ -93,18 +93,36 @@ function updateResults() {
     let lossPerPerson = totalMarketLoss/ISRAEL_POPULATION;
     let familyMarketLoss = tlvVsSnp*familySize*savings*AVG_STOCK_PART;
     let avgFamilyMarketLoss = lossPerPerson*AVG_FAMILY_SIZE;
+    
     controls.results.avgFamilyLoss.innerHTML = CUR_FORMAT.format(-avgFamilyMarketLoss);
     controls.results.myFamilyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
+    updateExplanationPct( ".TA125Change", tlvChange );
+    updateExplanationPct( ".gspcChange", snpChange );
+    updateExplanationPct( ".gspcVsTa", tlvVsSnp );
+    updateExplanationILS( ".totalMarketLoss", -totalMarketLoss);
+    updateExplanationILS( ".lossPerPerson", -lossPerPerson);
+    updateExplanationILS( ".avgFamilyLoss", -avgFamilyMarketLoss);
 
     // Yearly Cost
     let usdChange = USD_ILS/USD_ILS_START-1;
-    // console.log(`usdChange = ${usdChange}`);
     let eurChange = EUR_ILS/EUR_ILS_START-1;
-    // console.log(`eurChange = ${eurChange}`);
     let changeAvg = (usdChange + eurChange)/2;
-    // console.log(`changeAvg = ${changeAvg}`);
-    let myFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
-    let avgFamilyLoss = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
-    controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyLoss);
-    controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyLoss);
+    let myFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
+    let avgFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
+    
+    controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyCost);
+    controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyCost);
+    updateExplanationPct(".usdChange", usdChange);
+    updateExplanationPct(".eurChange", eurChange);
+    updateExplanationPct(".changeAvg", changeAvg);
+    updateExplanationILS(".avgFamilyCost", avgFamilyCost)
+}
+
+function updateExplanationPct( className, number ){
+    const fmtStr = NUM_FORMAT.format( number*100 )  + "%";
+    document.querySelectorAll(className).forEach( e => e.innerHTML=fmtStr );
+}
+function updateExplanationILS( className, number ){
+    const fmtStr = CUR_FORMAT.format( number );
+    document.querySelectorAll(className).forEach( e => e.innerHTML=fmtStr );
 }
