@@ -95,9 +95,82 @@
         <div class="row my-5">
             <div class="col">
                 <h2 id="explanation">איך חישבנו</h2>
+                <div class="alert alert-info">
+                    הערה: הנתונים מבוססים על חישובים שבוצעו על ידי כלכלנים בעלי ניסיון רב בשוק ההון ובתפקידים מקרו כלכליים.
+                </div>
+                
+                <h3>הפסדים כספיים ישירים לאזרחי ישראל כתוצאה מנפילת שוק המניות</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quasi delectus dolor quod iusto aliquid asperiores nihil? Eius, aspernatur. Atque, nisi. Accusamus reiciendis iusto doloribus ratione, voluptatum error non assumenda aspernatur maxime facilis nulla blanditiis inventore modi, porro excepturi eum est? Illum odio, architecto molestiae ab repudiandae voluptate voluptatibus ipsam similique sint eum doloremque exercitationem?
+                    כמעט כל אזרחי ישראל מחזיקים במניות שונות הנסחרות בבורסה בישראל: ישנם כאלה שמחזיקים במניות דרך חשבון השקעות בבנק וישנם כאלה שקרן הפנסיה, קרן ההשתלמות או מכשירי חסכון אחרים רוכשים עבורם מניות. 
                 </p>
+                <p>
+                    כאשר מחירי המניות יורדים כמו שקרה מאז הצגת המהפיכה המשפטית – נרשם לכם הפסד בתיק ההשקעות או בקרן הפנסיה. הנה חישוב מוערך של ההפסד: 
+                </p>
+                <ul class="explanation">
+                    <li>
+                        שיעור השינוי במדד ת"א 125 בבורסה בתל אביב מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult TA125Change"></span>.
+                    </li>
+                    <li>
+                        אנו מודדים את שיעור הירידה במדד ביחס למדד המניות האמריקאי המוביל S&amp;P 500 וזאת על מנת לנטרל השפעות חיצוניות.
+                        <br>
+                        שיעור השינוי במדד S&P 500 מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult gspcChange"></span>.
+                    </li>
+                    <li>
+                        שיעור השינוי במדד ת"א 125 ביחס למדד S&P 500 הוא <span class="inlineCalcResult gspcVsTa"></span>.
+                        <br>
+                        <strong>
+                            זהו ההפסד מהשקעה במניות למשקיע הישראלי הממוצע מאז הצגת הרפורמה המשפטית
+                        </strong>.
+                    </li>
+                    <li>
+                        לפי
+                         <a href="https://www.boi.org.il/roles/statistics/%D7%94%D7%9E%D7%A6%D7%A8%D7%A4%D7%99%D7%9D-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%94%D7%90%D7%A9%D7%A8%D7%90%D7%99/%D7%AA%D7%99%D7%A7-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/">פרסומי בנק ישראל</a>
+                          תיק הנכסים הכספיים של הציבור כולל השקעה במניות בישראל (באופן ישיר, באמצעות קרנות פנסיה, פוליסות ביטוח מנהלים, קרנות השתלמות וחסכונות מסוגים אחרים). בשווי של 715.5 מיליארד ₪. 
+                    </li>
+                    <li>
+                        לפיכך ההפסד לכלל הציבור הישראלי מהשקעה במניות בתקופה זו הוא 
+                        <span class="inlineCalcResult gspcVsTa">gspcVsTa</span> &times; <span class="inlineCalcResult">715,500,000,000₪</span> = <span class="inlineCalcResult totalMarketLoss">tm-loss</span>. 
+                    </li>
+                    <li>
+                        <a href="https://www.cbs.gov.il/he/mediarelease/Pages/2022/%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%99%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%A4%D7%AA%D7%97%D7%94-%D7%A9%D7%9C-%D7%A9%D7%A0%D7%AA-2023.aspx">בחישוב לנפש</a>
+                         מדובר על הפסד ממוצע של כ-
+                        <span class="inlineCalcResult lossPerPerson">lpp</span>.
+                    </li>
+                    <li class="qed">
+                        בחישוב
+                        <a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/058/11_23_058b.pdf">למשפחה ממוצעת בישראל </a>
+                        מדובר על הפסד של כ-
+                        <span class="inlineCalcResult avgFamilyLoss">lpp</span> 
+                        .
+                    </li>
+                </ul>
+                <h3>
+                    החמרה ביוקר המחייה בעקבות שינויים בשערי מטבע
+                </h3>
+                <p>
+                    עלות המחיה בישראל מושפעת באופן ישיר משערו של השקל מול מטבעות חוץ, בעיקר הדולר והיורו. כאשר הדולר והיורו עולים, כולנו משלמים יותר על כל מוצר מיובא. 
+                </p>
+                <ul class="explanation">
+                    <li>
+                        מיום הצגת הרפורמה המשפטית (4 בינואר) ועד היום הדולר התחזק ב-
+                        <span class="inlineCalcResult usdChange"></span>
+                        לעומת השקל, והיורו התחזק ב-
+                        <span class="inlineCalcResult eurChange"></span>
+                        הממוצע ביניהם הוא 
+                        <span class="inlineCalcResult changeAvg"></span>.
+                    </li>
+                    <li>
+                        <a href="https://www.boi.org.il/media/cb3fnfen/chap-321.pdf">בנק ישראל מעריך</a>
+                         שכ-20% מהתחזקות הדולר והיורו "מתגלגל" למדד המחירים לצרכן.
+                    </li>
+                    <li>
+                        מפרסום הלשכה המרכזית לסטטיסטיקה ברבעון של מקרו כלכלה יולי-ספטמבר 2022 ההוצאה הממוצעת לצריכה פרטית לנפש ב-3 הרבעונים הראשונים של 2022 היתה 67,408 ₪, וניתן לגזור מזה כי האומדן לשנת 2022 הוא 91,162 ₪ לנפש. בהתאמה למשפחה מדובר על כ-339 אלף ₪ לשנה. 
+                    </li>
+                    <li class="qed">
+                        לפיכך תוספת העלות השנתית למשפחה ממוצעת בשנה הקרובה הנובעת מהתחזקות הדולר והיורו היא כ-
+                        <span class="inlineCalcResult avgFamilyCost"></span>. 
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="row my-5">
@@ -163,7 +236,7 @@
     <div class="d-none" id="scrapeGround"></div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="js/rates.js?__C27865C__"></script>
+    <script src="js/rates.js?__C1890C__"></script>
     <script src="js/main.js"></script>
     <script>
         if ( document.readyState!=='loading' ){
