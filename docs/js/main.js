@@ -91,7 +91,7 @@ function updateResults() {
     let tlvVsSnp  =  (1+tlvChange)/(1+snpChange)-1;
     let totalMarketLoss = PUBLICLY_HELD_STOCK_VALUE*tlvVsSnp;
     let lossPerPerson = totalMarketLoss/ISRAEL_POPULATION;
-    let familyMarketLoss = tlvVsSnp*familySize*savings*AVG_STOCK_PART;
+    let familyMarketLoss = tlvVsSnp*savings*AVG_STOCK_PART;
     let avgFamilyMarketLoss = lossPerPerson*AVG_FAMILY_SIZE;
     
     controls.results.avgFamilyLoss.innerHTML = CUR_FORMAT.format(-avgFamilyMarketLoss);
