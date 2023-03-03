@@ -26,21 +26,18 @@ function setup(){
     controls.fld.snp500 = document.getElementById("fldSnP500");
     controls.fld.ilsUsd = document.getElementById("fldIlsUsd");
     controls.fld.ilsEur = document.getElementById("fldIlsEur");
-    controls.fld.familySize = document.getElementById("fldFamilySize");
-    controls.fld.monthlySpend = document.getElementById("fldMonthlySpend");
+    controls.fld.monthlySave = document.getElementById("fldMonthlySave");
+    controls.fld.monthlyIncome = document.getElementById("fldMonthlyIncome");
     controls.fld.savings = document.getElementById("fldSavedMoney");
     
-    controls.lbl.familySize = document.getElementById("lblFamilySize");
+    controls.lbl.monthlySave = document.getElementById("lblMonthlySave");
     
     controls.results.avgFamilyLoss = document.getElementById("avgFamilyLoss");
     controls.results.myFamilyLoss = document.getElementById("myFamilyLoss");
     controls.results.avgFamilyCost = document.getElementById("avgFamilyCost");
     controls.results.myFamilyCost = document.getElementById("myFamilyCost");
     
-    // init the monthly spend input to a 3-person family
-    controls.fld.monthlySpend.value = Math.round(3*AVG_PERSON_YR_SPEND/12);
-
-    makeNumberField(controls.fld.monthlySpend);
+    makeNumberField(controls.fld.monthlyIncome);
     makeNumberField(controls.fld.savings);
     updateScrapedData();
 }
@@ -79,13 +76,9 @@ function updateScrapedData(){
 function updateResults() {
     if ( ! ready ) return;
 
-    let familySize = Number(controls.fld.familySize.value);
-    let avgSpend = formattedStringToNum(controls.fld.monthlySpend.value);
+    // Cap Market Loss
     let savings =  formattedStringToNum(controls.fld.savings.value);
     
-    controls.lbl.familySize.innerHTML = String(familySize);
-
-    // Cap Market Loss
     let tlvChange =  (TA_125/TA_125_START)-1;
     let snpChange =  (GSPC/GSPC_START)-1;
     let tlvVsSnp  =  (1+tlvChange)/(1+snpChange)-1;
@@ -102,14 +95,19 @@ function updateResults() {
     updateExplanationILS( ".totalMarketLoss", -totalMarketLoss);
     updateExplanationILS( ".lossPerPerson", -lossPerPerson);
     updateExplanationILS( ".avgFamilyLoss", -avgFamilyMarketLoss);
-
+    
     // Yearly Cost
+    let monthlySave = Number(controls.fld.monthlySave.value);
+    let monthlySavePct = monthlySave/100;
+    let monthlyIncome = formattedStringToNum(controls.fld.monthlyIncome.value);
+    
     let usdChange = USD_ILS/USD_ILS_START-1;
     let eurChange = EUR_ILS/EUR_ILS_START-1;
     let changeAvg = (usdChange + eurChange)/2;
-    let myFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*avgSpend*12*familySize;
     let avgFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
+    let myFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*(1-monthlySavePct)*monthlyIncome*12;
     
+    controls.lbl.monthlySave.innerHTML = CUR_FORMAT.format(monthlyIncome*monthlySavePct) + "  (" + String(monthlySave) + "%)";
     controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyCost);
     controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyCost);
     updateExplanationPct(".usdChange", usdChange);
