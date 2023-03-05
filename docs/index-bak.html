@@ -36,7 +36,7 @@
                 <div class="collapse" id="myFamilyLossCtnr">
                     <div class="card card-body">
                         <div class="mb-3 row">
-                            <label for="fldSavedMoney" class="col-sm-5 col-form-label">כמה כסף חסכת בקרנות פנסיה, קרנות השתלמות קופות גמל וחסכונות אחרים</label>
+                            <label for="fldSavedMoney" class="col-sm-5 col-form-label">כמה כסף חסכתם בקרנות פנסיה, קרנות השתלמות קופות גמל וחסכונות אחרים?</label>
                             <div class="col-sm-7">
                                 <input type="tel" oninput="updateResults()" class="form-control" id="fldSavedMoney" value="300,000₪">
                             </div>
@@ -70,17 +70,18 @@
                 <div class="collapse" id="myFamilyCostCtnr">
                     <div class="card card-body">
                         <div class="mb-3 row">
-                            <label for="fldFamilySize" class="col-sm-5 col-form-label">מס׳ נפשות במשפחה</label>
-                            <div class="col-sm-6">
-                                <input type="range" min="1" max="20" autocomplete="off" class="form-range" oninput="updateResults()" id="fldFamilySize" value="4">
+                            <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הכנסה חודשית ממוצעת (לכל המשפחה)</label>
+                            <div class="col-sm-7">
+                                <input type="tel" oninput="updateResults()"  class="form-control" id="fldMonthlyIncome" value="42,000₪">
                             </div>
-                            <label id="lblFamilySize" class="col-sm-1 col-form-label">3</label>
                         </div>
                         <div class="mb-3 row">
-                            <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הוצאה חודשית ממוצעת</label>
-                            <div class="col-sm-7">
-                                <input type="tel" oninput="updateResults()"  class="form-control" id="fldMonthlySpend" value="23,000₪">
+                            <label for="fldFamilySize" class="col-sm-5 col-form-label">כמה אחוזים מתוך ההכנסה החודשית מועברים לחסכון?</label>
+                            <div class="col-sm-4">
+                                <input type="range" min="0" max="100" autocomplete="off" class="form-range" 
+                                        oninput="updateResults()" id="fldMonthlySave" value="15">
                             </div>
+                            <label id="lblMonthlySave" class="col-sm-3 col-form-label">15</label>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-5 col-form-label">הערכת תוספת עלות שנתית (ל-2023)</label>
@@ -164,7 +165,9 @@
                          שכ-20% מהתחזקות הדולר והיורו "מתגלגל" למדד המחירים לצרכן.
                     </li>
                     <li>
-                        מפרסום הלשכה המרכזית לסטטיסטיקה ברבעון של מקרו כלכלה יולי-ספטמבר 2022 ההוצאה הממוצעת לצריכה פרטית לנפש ב-3 הרבעונים הראשונים של 2022 היתה 67,408 ₪, וניתן לגזור מזה כי האומדן לשנת 2022 הוא 91,162 ₪ לנפש. בהתאמה למשפחה מדובר על כ-339 אלף ₪ לשנה. 
+                        מפרסום הלשכה המרכזית לסטטיסטיקה ברבעון של מקרו כלכלה יולי-ספטמבר 2022 ההוצאה הממוצעת לצריכה פרטית לנפש ב-3 הרבעונים הראשונים של 2022 היתה 67,408 ₪.
+                         סכום זה אולי נראה גבוה, אך יש לזכור שהוא כולל גם הוצאות מגורים (משכנתא/שכר דירה), ורכב.
+                          לפי נתונים אלו, ניתן לגזור כי ההוצאה הממוצעה לצריכה פרטית לנפש ב-2022 היתה כ-91,162₪. בהתאמה למשפחה מדובר על כ-339 אלף ₪ לשנה. 
                     </li>
                     <li class="qed">
                         לפיכך תוספת העלות השנתית למשפחה ממוצעת בשנה הקרובה הנובעת מהתחזקות הדולר והיורו היא כ-
@@ -233,10 +236,9 @@
             </div>
         </div>
     </footer>
-    <div class="d-none" id="scrapeGround"></div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="js/rates.js?__C1890C__"></script>
+    <script src="js/rates.js?__C30245C__"></script>
     <script src="js/main.js"></script>
     <script>
         if ( document.readyState!=='loading' ){
