@@ -80,8 +80,8 @@ function updateResults() {
     let savings =  formattedStringToNum(controls.fld.savings.value);
     
     let tlvChange =  (TA_125/TA_125_START)-1;
-    let snpChange =  (GSPC/GSPC_START)-1;
-    let tlvVsSnp  =  (1+tlvChange)/(1+snpChange)-1;
+    let gspcChange =  (GSPC/GSPC_START)-1;
+    let tlvVsSnp  =  (1+tlvChange)/(1+gspcChange)-1;
     let totalMarketLoss = PUBLICLY_HELD_STOCK_VALUE*tlvVsSnp;
     let lossPerPerson = totalMarketLoss/ISRAEL_POPULATION;
     let familyMarketLoss = tlvVsSnp*savings*AVG_STOCK_PART;
@@ -90,7 +90,7 @@ function updateResults() {
     controls.results.avgFamilyLoss.innerHTML = CUR_FORMAT.format(-avgFamilyMarketLoss);
     controls.results.myFamilyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
     updateExplanationPct( ".TA125Change", tlvChange );
-    updateExplanationPct( ".gspcChange", snpChange );
+    updateExplanationPct( ".gspcChange", gspcChange );
     updateExplanationPct( ".gspcVsTa", tlvVsSnp );
     updateExplanationILS( ".totalMarketLoss", -totalMarketLoss);
     updateExplanationILS( ".lossPerPerson", -lossPerPerson);

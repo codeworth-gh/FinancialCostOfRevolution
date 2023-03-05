@@ -72,16 +72,16 @@
                         <div class="mb-3 row">
                             <label for="fldMonthlySpend" class="col-sm-5 col-form-label">הכנסה חודשית ממוצעת (לכל המשפחה)</label>
                             <div class="col-sm-7">
-                                <input type="tel" oninput="updateResults()"  class="form-control" id="fldMonthlyIncome" value="42,000₪">
+                                <input type="tel" oninput="updateResults()"  class="form-control" id="fldMonthlyIncome" value="80,000₪">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="fldFamilySize" class="col-sm-5 col-form-label">כמה אחוזים מתוך ההכנסה החודשית מועברים לחסכון?</label>
                             <div class="col-sm-4">
                                 <input type="range" min="0" max="100" autocomplete="off" class="form-range" 
-                                        oninput="updateResults()" id="fldMonthlySave" value="15">
+                                        oninput="updateResults()" id="fldMonthlySave" value="5">
                             </div>
-                            <label id="lblMonthlySave" class="col-sm-3 col-form-label">15</label>
+                            <label id="lblMonthlySave" class="col-sm-3 col-form-label">5</label>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-5 col-form-label">הערכת תוספת עלות שנתית (ל-2023)</label>
@@ -120,17 +120,17 @@
                         שיעור השינוי במדד ת"א 125 ביחס למדד S&P 500 הוא <span class="inlineCalcResult gspcVsTa"></span>.
                         <br>
                         <strong>
-                            זהו ההפסד (באחוזים) מהשקעה במניות למשקיע הישראלי הממוצע מאז הצגת הרפורמה המשפטית
-                        </strong>.
+                            זהו ההפסד (באחוזים) מהשקעה במניות למשקיע הישראלי הממוצע מאז הצגת הרפורמה המשפטית.
+                        </strong>
                     </li>
                     <li>
                         לפי
                          <a href="https://www.boi.org.il/roles/statistics/%D7%94%D7%9E%D7%A6%D7%A8%D7%A4%D7%99%D7%9D-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%94%D7%90%D7%A9%D7%A8%D7%90%D7%99/%D7%AA%D7%99%D7%A7-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/">פרסומי בנק ישראל</a>
-                          תיק הנכסים הכספיים של הציבור כולל השקעה במניות בישראל (באופן ישיר, באמצעות קרנות פנסיה, פוליסות ביטוח מנהלים, קרנות השתלמות וחסכונות מסוגים אחרים). בשווי של 715.5 מיליארד ₪. 
+                          תיק הנכסים הכספיים של הציבור כולל השקעה במניות בישראל (באופן ישיר, באמצעות קרנות פנסיה, פוליסות ביטוח מנהלים, קרנות השתלמות וחסכונות מסוגים אחרים) בשווי של 715.5 מיליארד ₪. 
                     </li>
                     <li>
                         לפיכך ההפסד לכלל הציבור הישראלי מהשקעה במניות בתקופה זו הוא 
-                        <span class="inlineCalcResult gspcVsTa">gspcVsTa</span> &times; <span class="inlineCalcResult">715,500,000,000₪</span> = <span class="inlineCalcResult totalMarketLoss">tm-loss</span>
+                        <span class="inlineCalcResult gspcVsTa">gspcVsTa</span> &times; <span class="inlineCalcResult">₪715,500,000,000</span> = <span class="inlineCalcResult totalMarketLoss">tm-loss</span>
                         (כן, זה במיליארדים!).
                     </li>
                     <li>
@@ -150,15 +150,16 @@
                     החמרה ביוקר המחייה בעקבות שינויים בשערי מטבע
                 </h3>
                 <p>
-                    עלות המחיה בישראל מושפעת באופן ישיר משערו של השקל מול מטבעות חוץ, בעיקר הדולר והיורו. כאשר הדולר והיורו עולים, כולנו משלמים יותר על כל מוצר מיובא. 
+                    עלות המחיה בישראל מושפעת באופן ישיר משערו של השקל מול מטבעות חוץ, בעיקר הדולר והיורו. כאשר הדולר והיורו עולים, כולנו משלמים יותר על מוצרים מיובאים,
+                    ועל מוצרים שמרכיבים שלהם יובאו. 
                 </p>
                 <ul class="explanation">
                     <li>
                         מיום הצגת הרפורמה המשפטית (4 בינואר) ועד היום הדולר התחזק ב-
                         <span class="inlineCalcResult usdChange"></span>
                         לעומת השקל, והיורו התחזק ב-
-                        <span class="inlineCalcResult eurChange"></span>
-                        הממוצע ביניהם הוא 
+                        <span class="inlineCalcResult eurChange"></span>.
+                        ממוצע השינויים הוא
                         <span class="inlineCalcResult changeAvg"></span>.
                     </li>
                     <li>
