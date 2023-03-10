@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+// @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
 @font-face {
     font-family: 'LiquidCrystal';
@@ -7,11 +7,49 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'calibri';
+    src: url('calibril.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'calibri';
+    src: url('calibri.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'calibri';
+    src: url('calibrib.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'calibri';
+    src: url('calibrii.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'calibri';
+    src: url('calibriz.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'calibri';
+    src: url('calibrli.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+$grayBarHeight: 40px;
 $israelBlue: #121FF9;
 
 body {
     direction: rtl;
-    font-family: "Alef Hebrew",
+    font-family: "calibri",
                "Helvetica Neue",
                Helvetica,
                Arial,
@@ -19,22 +57,70 @@ body {
 }
 
 header {
-    margin:0;
-    padding: 20px 0;
-    background-color: $israelBlue;
-    h1 {
-        font-size: 4rem;
-        font-weight: bold;
+    .grayBar {
+        height: $grayBarHeight;
+        background-color: #dcdcdc;
+        color: black;
         text-align: center;
+        line-height: $grayBarHeight;
+        font-size: 9pt;
+        span {
+            font-weight: lighter;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .titleSection { 
+        // #3178d4 top
+        // #112c4d bottom
+        text-align: center;
+        background: rgb(49,120,212);
+        background: linear-gradient(180deg, rgba(49,120,212,1) 0%, rgba(17,44,77,1) 100%); 
         color: white;
+        border-radius: 0 0 19px 19px;
+        box-shadow: 0 8px 8px rgba(0,0,0,0.25);
+        padding: 0 0 1rem 0;
+        position: relative;
+        img.bankImage {
+            color: white;
+            position: absolute;
+            left: 2rem;
+            top: 15%;
+            height: 70%;
+        }
+        img.bankImage.bankImage-right {
+            left: inherit;
+            right: 2rem;
+        }
+        h1 {
+            padding: 0;
+            margin-top: 1.5rem;
+            font-size: 3.5rem;
+            line-height: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        h2 {
+            padding: 0;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #FFF;
+        }
+
+        .remark {
+            font-weight: lighter;
+            font-size: 10pt;
+        }
     }
-    h2 {
-        margin: 1em 0;
-        background-color: white;
-        color: $israelBlue;
-        text-align: center;
-        padding: .2em 0;
-    }
+    
 }
 
 .calcResult {
@@ -103,6 +189,42 @@ footer {
                     background-color: #080;
                     color:#FF0;
                 }
+            }
+        }
+    }
+}
+
+$bankSize: 60px;
+$bankOffset: calc(-1 * $bankSize / 8*3);
+@media (max-width: 992px) { 
+    header {
+        .titleSection {   
+            h1 {
+                padding: 0;
+                margin-top: 1.5rem;
+                font-size: 2.5rem;
+                line-height: 2rem;
+                font-weight: bold;
+                text-align: center;
+            }
+            h2 {
+                padding: 0 ($bankSize);
+                font-size: 1rem;
+                line-height: 1rem;
+            }
+    
+            hr {
+                border: none;
+                border-top: 2px dashed #FFF;
+            } 
+            img.bankImage {
+                top: 37%;
+                height: $bankSize;
+                left: $bankOffset;
+            }
+            img.bankImage.bankImage-right {
+                left: inherit;
+                right: $bankOffset;
             }
         }
     }

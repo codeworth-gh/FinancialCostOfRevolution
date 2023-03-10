@@ -1,32 +1,108 @@
-@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 @font-face {
   font-family: "LiquidCrystal";
   src: url("LiquidCrystal-Bold.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
 }
+@font-face {
+  font-family: "calibri";
+  src: url("calibril.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "calibri";
+  src: url("calibri.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "calibri";
+  src: url("calibrib.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "calibri";
+  src: url("calibrii.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "calibri";
+  src: url("calibriz.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "calibri";
+  src: url("calibrli.ttf") format("truetype");
+  font-weight: light;
+  font-style: italic;
+}
 body {
   direction: rtl;
-  font-family: "Alef Hebrew", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "calibri", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-header {
-  margin: 0;
-  padding: 20px 0;
-  background-color: #121FF9;
+header .grayBar {
+  height: 40px;
+  background-color: #dcdcdc;
+  color: black;
+  text-align: center;
+  line-height: 40px;
+  font-size: 9pt;
 }
-header h1 {
-  font-size: 4rem;
+header .grayBar span {
+  font-weight: lighter;
+}
+header .grayBar img {
+  width: 20px;
+  height: 20px;
+}
+header .titleSection {
+  text-align: center;
+  background: rgb(49, 120, 212);
+  background: linear-gradient(180deg, rgb(49, 120, 212) 0%, rgb(17, 44, 77) 100%);
+  color: white;
+  border-radius: 0 0 19px 19px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+  padding: 0 0 1rem 0;
+  position: relative;
+}
+header .titleSection img.bankImage {
+  color: white;
+  position: absolute;
+  left: 2rem;
+  top: 15%;
+  height: 70%;
+}
+header .titleSection img.bankImage.bankImage-right {
+  left: inherit;
+  right: 2rem;
+}
+header .titleSection h1 {
+  padding: 0;
+  margin-top: 1.5rem;
+  font-size: 3.5rem;
+  line-height: 2.5rem;
   font-weight: bold;
   text-align: center;
-  color: white;
 }
-header h2 {
-  margin: 1em 0;
-  background-color: white;
-  color: #121FF9;
+header .titleSection h2 {
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: normal;
   text-align: center;
-  padding: 0.2em 0;
+}
+header .titleSection hr {
+  border: none;
+  border-top: 2px dashed #FFF;
+}
+header .titleSection .remark {
+  font-weight: lighter;
+  font-size: 10pt;
 }
 
 .calcResult {
@@ -89,6 +165,35 @@ footer ul li a:hover {
 footer ul li a:active {
   background-color: #080;
   color: #FF0;
+}
+
+@media (max-width: 992px) {
+  header .titleSection h1 {
+    padding: 0;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  header .titleSection h2 {
+    padding: 0 60px;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  header .titleSection hr {
+    border: none;
+    border-top: 2px dashed #FFF;
+  }
+  header .titleSection img.bankImage {
+    top: 37%;
+    height: 60px;
+    left: -22.5px;
+  }
+  header .titleSection img.bankImage.bankImage-right {
+    left: inherit;
+    right: -22.5px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
