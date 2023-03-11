@@ -1,7 +1,8 @@
 const controls={
     fld:{},
     results:{},
-    lbl:{}
+    lbl:{},
+    slt:{}
 };
 
 
@@ -17,45 +18,28 @@ const USD_ILS_START = 3.527;
 const EUR_ILS_START = 3.74;
 const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 
-const CUR_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
+const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
 const NUM_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
 
 function setup(){
     // build controls
-    controls.fld.tlv125 = document.getElementById("fldTlv125");
-    controls.fld.snp500 = document.getElementById("fldSnP500");
-    controls.fld.ilsUsd = document.getElementById("fldIlsUsd");
-    controls.fld.ilsEur = document.getElementById("fldIlsEur");
     controls.fld.monthlySave = document.getElementById("fldMonthlySave");
-    controls.fld.monthlyIncome = document.getElementById("fldMonthlyIncome");
-    controls.fld.savings = document.getElementById("fldSavedMoney");
     
     controls.lbl.monthlySave = document.getElementById("lblMonthlySave");
     
+    controls.slt.income = document.getElementById("sltFamilyIncome");
+    controls.slt.savings = document.getElementById("sltFamilySavings");
+
     controls.results.avgFamilyLoss = document.getElementById("avgFamilyLoss");
     controls.results.myFamilyLoss = document.getElementById("myFamilyLoss");
     controls.results.avgFamilyCost = document.getElementById("avgFamilyCost");
     controls.results.myFamilyCost = document.getElementById("myFamilyCost");
     
-    makeNumberField(controls.fld.monthlyIncome);
-    makeNumberField(controls.fld.savings);
     updateScrapedData();
 }
 
 function formattedStringToNum( str ) {
     return Number(str.replaceAll(/[^0-9]/g,""));
-}
-
-function makeNumberField( fld ) {
-    
-    fld.addEventListener("focusin", function(e){
-        fld.value = formattedStringToNum(fld.value);
-        fld.select();
-    });
-    fld.addEventListener("focusout", function(e){
-        const rawVal = fld.value;
-        fld.value = CUR_FORMAT.format(Number(rawVal));
-    });
 }
 
 function updateScrapedData(){
@@ -77,7 +61,7 @@ function updateResults() {
     if ( ! ready ) return;
 
     // Cap Market Loss
-    let savings =  formattedStringToNum(controls.fld.savings.value);
+    let savings =  Number(controls.slt.savings.value);
     
     let tlvChange =  (TA_125/TA_125_START)-1;
     let gspcChange =  (GSPC/GSPC_START)-1;
@@ -97,9 +81,9 @@ function updateResults() {
     updateExplanationILS( ".avgFamilyLoss", -avgFamilyMarketLoss);
     
     // Yearly Cost
+    let monthlyIncome = Number(controls.slt.income.value);
     let monthlySave = Number(controls.fld.monthlySave.value);
     let monthlySavePct = monthlySave/100;
-    let monthlyIncome = formattedStringToNum(controls.fld.monthlyIncome.value);
     
     let usdChange = USD_ILS/USD_ILS_START-1;
     let eurChange = EUR_ILS/EUR_ILS_START-1;
