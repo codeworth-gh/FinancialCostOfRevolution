@@ -80,6 +80,8 @@ header {
     .titleSection { 
         // #3178d4 top
         // #112c4d bottom
+        position: relative;
+        overflow: hidden;
         text-align: center;
         background: rgb(49,120,212);
         background: linear-gradient(180deg, rgba(49,120,212,1) 0%, rgba(17,44,77,1) 100%); 
@@ -87,7 +89,6 @@ header {
         border-radius: 0 0 19px 19px;
         box-shadow: 0 8px 8px rgba(0,0,0,0.25);
         padding: 0 0 1rem 0;
-        position: relative;
         img.bankImage {
             color: white;
             position: absolute;

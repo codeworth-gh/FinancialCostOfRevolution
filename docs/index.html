@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>חדר המצב הכלכלי - ההשפעה הכלכלית של המהפיכה המשפטית על הציבור בישראל</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?1000">
     <link rel="icon" type="image/png" href="icon.png">
   </head>
   <body>
@@ -120,11 +120,11 @@
                     <select id="sltFamilySavings" class="form-select" onchange="updateResults()">
                         <option value="1375000">בין 1,250,000₪ ל-1,500,000₪</option>
                         <option value="1125000">בין 1,000,000₪ ל-1,250,000₪</option>
-                        <option value="82500">בין 750,000₪ ל-1,000,000₪</option>
-                        <option value="62500">בין 500,000₪ ל-750,000₪</option>
-                        <option value="375000">בין 250,000₪ ל-500,000₪</option>
-                        <option value="125000" selected>בין 100,000₪ ל-250,000₪</option>
-                        <option value="75000">כ-100,000₪</option>
+                        <option  value="825000">בין 750,000₪ ל-1,000,000₪</option>
+                        <option  value="625000">בין 500,000₪ ל-750,000₪</option>
+                        <option  value="375000">בין 250,000₪ ל-500,000₪</option>
+                        <option  value="125000" selected>בין 100,000₪ ל-250,000₪</option>
+                        <option   value="75000">כ-100,000₪</option>
                     </select>
                     <div class="calcPill">
                         <span>חישוב</span>
@@ -135,137 +135,142 @@
                 <div class="grayBox grayBox-bottom">
                     <div class="calcResult" id="myFamilyLoss">1000</div>
                     <p>
-                        זהו סכום ההפסד המוערך עבורך כתוצאה מנפילת שוק המניות עד כה.
+                        זהו סכום ההפסד המוערך עבורכם כתוצאה מנפילת שוק המניות עד כה.
                     </p>
                     <a href="#explanation" class="explanation">?</a>
                 </div>
             </div>
         </div>
-        <div class="row mt-5 explanationPart">
-            <div class="col">
-                <h2 id="explanation">
-                    <a href="#" class="explanation-inline">?</a>
-                    איך חישבנו
-                </h2>
-                <p><em>
-                    הערה: הנתונים מבוססים על חישובים שבוצעו על ידי כלכלנים בעלי ניסיון רב בשוק ההון ובתפקידים מקרו כלכליים.
-                </em></p>
-                
-                <h3>הפסדים כספיים ישירים לאזרחי ישראל כתוצאה מנפילת שוק המניות</h3>
-                <p>
-                    כמעט כל אזרחי ישראל מחזיקים במניות הנסחרות בבורסה בישראל: ישנם כאלה שמחזיקים במניות דרך חשבון השקעות בבנק וישנם כאלה שמחזיקים מניות באמצעות קרן הפנסיה, קרן ההשתלמות או מכשירי חסכון אחרים.
-                </p>
-                <p>
-                    כאשר מחירי המניות יורדים כמו שקרה מאז הצגת המהפיכה המשפטית – נרשם לכם הפסד בתיק ההשקעות או בקרן הפנסיה. הנה חישוב מוערך של ההפסד: 
-                </p>
-                <ul class="explanation">
-                    <li>
-                        שיעור השינוי במדד ת"א 125 בבורסה בתל אביב מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult TA125Change"></span>.
-                    </li>
-                    <li>
-                        אנו מודדים את שיעור הירידה במדד ביחס למדד המניות האמריקאי המוביל S&amp;P 500 וזאת על מנת לנטרל השפעות חיצוניות.
-                        <br>
-                        שיעור השינוי במדד S&P 500 מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult gspcChange"></span>.
-                    </li>
-                    <li>
-                        שיעור השינוי במדד ת"א 125 ביחס למדד S&P 500 הוא <span class="inlineCalcResult gspcVsTa"></span>.
-                        <br>
-                        <strong>
-                            זהו ההפסד (באחוזים) מהשקעה במניות למשקיע הישראלי הממוצע מאז הצגת הרפורמה המשפטית.
-                        </strong>
-                    </li>
-                    <li>
-                        לפי
-                         <a href="https://www.boi.org.il/roles/statistics/%D7%94%D7%9E%D7%A6%D7%A8%D7%A4%D7%99%D7%9D-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%94%D7%90%D7%A9%D7%A8%D7%90%D7%99/%D7%AA%D7%99%D7%A7-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/">פרסומי בנק ישראל</a>
-                          תיק הנכסים הכספיים של הציבור כולל השקעה במניות בישראל (באופן ישיר, באמצעות קרנות פנסיה, פוליסות ביטוח מנהלים, קרנות השתלמות וחסכונות מסוגים אחרים) בשווי של 715.5 מיליארד ₪. 
-                    </li>
-                    <li>
-                        לפיכך ההפסד לכלל הציבור הישראלי מהשקעה במניות בתקופה זו הוא 
-                        <span class="inlineCalcResult gspcVsTa">gspcVsTa</span> &times; <span class="inlineCalcResult">₪715,500,000,000</span> = <span class="inlineCalcResult totalMarketLoss">tm-loss</span>
-                        (כן, זה במיליארדים!).
-                    </li>
-                    <li>
-                        <a href="https://www.cbs.gov.il/he/mediarelease/Pages/2022/%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%99%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%A4%D7%AA%D7%97%D7%94-%D7%A9%D7%9C-%D7%A9%D7%A0%D7%AA-2023.aspx">בחישוב לנפש</a>
-                         מדובר על הפסד ממוצע של כ-
-                        <span class="inlineCalcResult lossPerPerson">lpp</span>.
-                    </li>
-                    <li class="qed">
-                        בחישוב
-                        <a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/058/11_23_058b.pdf">למשפחה ממוצעת בישראל </a>
-                        מדובר על הפסד של כ-
-                        <span class="inlineCalcResult avgFamilyLoss">lpp</span> 
-                        .
-                    </li>
-                </ul>
-                <h3>
-                    החמרה ביוקר המחייה בעקבות שינויים בשערי מטבע
-                </h3>
-                <p>
-                    עלות המחיה בישראל מושפעת באופן ישיר משערו של השקל מול מטבעות חוץ, בעיקר הדולר והיורו. כאשר הדולר והיורו עולים, כולנו משלמים יותר על מוצרים מיובאים,
-                    ועל מוצרים שמרכיבים שלהם יובאו. 
-                </p>
-                <ul class="explanation">
-                    <li>
-                        מיום הצגת הרפורמה המשפטית (4 בינואר) ועד היום הדולר התחזק ב-
-                        <span class="inlineCalcResult usdChange"></span>
-                        לעומת השקל, והיורו התחזק ב-
-                        <span class="inlineCalcResult eurChange"></span>.
-                        ממוצע השינויים הוא
-                        <span class="inlineCalcResult changeAvg"></span>.
-                    </li>
-                    <li>
-                        <a href="https://www.boi.org.il/media/cb3fnfen/chap-321.pdf">בנק ישראל מעריך</a>
-                         שכ-20% מהתחזקות הדולר והיורו "מתגלגל" למדד המחירים לצרכן.
-                    </li>
-                    <li>
-                        <a href="https://www.cbs.gov.il/he/publications/DocLib/2022/macro_q202203/h_print.pdf" target="_blank">
-                            מפרסום הלשכה המרכזית לסטטיסטיקה ברבעון של מקרו כלכלה יולי-ספטמבר 2022 
-                        </a>
-                        עולה כי ההוצאה הממוצעת לצריכה פרטית לנפש ב-3 הרבעונים הראשונים של 2022 היתה 67,408 ₪.
-                         סכום זה אולי נראה גבוה, אך יש לזכור שהוא כולל גם הוצאות מגורים (משכנתא/שכר דירה), ורכב.
-                          לפי נתונים אלו, ניתן לגזור כי ההוצאה הממוצעה לצריכה פרטית לנפש ב-2022 היתה כ-91,162₪. בהתאמה למשפחה מדובר על כ-339 אלף ₪ לשנה. 
-                    </li>
-                    <li class="qed">
-                        לפיכך תוספת העלות השנתית למשפחה ממוצעת בשנה הקרובה הנובעת מהתחזקות הדולר והיורו היא כ-
-                        <span class="inlineCalcResult avgFamilyCost"></span>. 
-                    </li>
-                </ul>
-                <h2>נתוני מקרו</h2>
-                <table class="table table-dark table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>גורם</th>
-                            <th>ערך נוכחי</th>
-                            <th>ערך 4/1/2023</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>תל אביב 125</th>
-                            <td id="tdTA125"></td>
-                            <td id="tdTA125Start"></td>
-                        </tr>
-                        <tr>
-                            <th>S&P 500</th>
-                            <td id="tdGspc"></td>
-                            <td id="tdGspcStart"></td>
-                        </tr>
-                        <tr>
-                            <th>שער הדולר</th>
-                            <td id="tdUsdIls"></td>
-                            <td id="tdUsdIlsStart"></td>
-                        </tr>
-                        <tr>
-                            <th>שער היורו</th>
-                            <td id="tdEurIls"></td>
-                            <td id="tdEurIlsStart"></td>
-                        </tr>
-                        <tr>
-                            <th>תאריך עדכון</th>
-                            <td id="tdUpdateDate" colspan="2"></td>
-                        </tr>
-                    </tbody>
-                </table>
+    </div>
+    <div class="explanationPart">
+        <div class="container">
+
+            <div class="row mt-5 explanationPart">
+                <div class="col">
+                    <h2 id="explanation">
+                        <a href="#" class="explanation-inline">?</a>
+                        איך חישבנו
+                    </h2>
+                    <p><em>
+                        הערה: הנתונים מבוססים על חישובים שבוצעו על ידי כלכלנים בעלי ניסיון רב בשוק ההון ובתפקידים מקרו כלכליים.
+                    </em></p>
+                    
+                    <h3>הפסדים כספיים ישירים לאזרחי ישראל כתוצאה מנפילת שוק המניות</h3>
+                    <p>
+                        כמעט כל אזרחי ישראל מחזיקים במניות הנסחרות בבורסה בישראל: ישנם כאלה שמחזיקים במניות דרך חשבון השקעות בבנק וישנם כאלה שמחזיקים מניות באמצעות קרן הפנסיה, קרן ההשתלמות או מכשירי חסכון אחרים.
+                    </p>
+                    <p>
+                        כאשר מחירי המניות יורדים כמו שקרה מאז הצגת המהפיכה המשפטית – נרשם לכם הפסד בתיק ההשקעות או בקרן הפנסיה. הנה חישוב מוערך של ההפסד: 
+                    </p>
+                    <ul class="explanation">
+                        <li>
+                            שיעור השינוי במדד ת"א 125 בבורסה בתל אביב מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult TA125Change"></span>.
+                        </li>
+                        <li>
+                            אנו מודדים את שיעור הירידה במדד ביחס למדד המניות האמריקאי המוביל S&amp;P 500 וזאת על מנת לנטרל השפעות חיצוניות.
+                            <br>
+                            שיעור השינוי במדד S&P 500 מאז ה-4 בינואר ועד היום: <span class="inlineCalcResult gspcChange"></span>.
+                        </li>
+                        <li>
+                            שיעור השינוי במדד ת"א 125 ביחס למדד S&P 500 הוא <span class="inlineCalcResult gspcVsTa"></span>.
+                            <br>
+                            <strong>
+                                זהו ההפסד (באחוזים) מהשקעה במניות למשקיע הישראלי הממוצע מאז הצגת הרפורמה המשפטית.
+                            </strong>
+                        </li>
+                        <li>
+                            לפי
+                             <a href="https://www.boi.org.il/roles/statistics/%D7%94%D7%9E%D7%A6%D7%A8%D7%A4%D7%99%D7%9D-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%94%D7%90%D7%A9%D7%A8%D7%90%D7%99/%D7%AA%D7%99%D7%A7-%D7%94%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/">פרסומי בנק ישראל</a>
+                              תיק הנכסים הכספיים של הציבור כולל השקעה במניות בישראל (באופן ישיר, באמצעות קרנות פנסיה, פוליסות ביטוח מנהלים, קרנות השתלמות וחסכונות מסוגים אחרים) בשווי של 715.5 מיליארד ₪. 
+                        </li>
+                        <li>
+                            לפיכך ההפסד לכלל הציבור הישראלי מהשקעה במניות בתקופה זו הוא 
+                            <span class="inlineCalcResult gspcVsTa">gspcVsTa</span> &times; <span class="inlineCalcResult">₪715,500,000,000</span> = <span class="inlineCalcResult totalMarketLoss">tm-loss</span>
+                            (כן, זה במיליארדים!).
+                        </li>
+                        <li>
+                            <a href="https://www.cbs.gov.il/he/mediarelease/Pages/2022/%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%99%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%A4%D7%AA%D7%97%D7%94-%D7%A9%D7%9C-%D7%A9%D7%A0%D7%AA-2023.aspx">בחישוב לנפש</a>
+                             מדובר על הפסד ממוצע של כ-
+                            <span class="inlineCalcResult lossPerPerson">lpp</span>.
+                        </li>
+                        <li class="qed">
+                            בחישוב
+                            <a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/058/11_23_058b.pdf">למשפחה ממוצעת בישראל </a>
+                            מדובר על הפסד של כ-
+                            <span class="inlineCalcResult avgFamilyLoss">lpp</span> 
+                            .
+                        </li>
+                    </ul>
+                    <h3>
+                        החמרה ביוקר המחייה בעקבות שינויים בשערי מטבע
+                    </h3>
+                    <p>
+                        עלות המחיה בישראל מושפעת באופן ישיר משערו של השקל מול מטבעות חוץ, בעיקר הדולר והיורו. כאשר הדולר והיורו עולים, כולנו משלמים יותר על מוצרים מיובאים,
+                        ועל מוצרים שמרכיבים שלהם יובאו. 
+                    </p>
+                    <ul class="explanation">
+                        <li>
+                            מיום הצגת הרפורמה המשפטית (4 בינואר) ועד היום הדולר התחזק ב-
+                            <span class="inlineCalcResult usdChange"></span>
+                            לעומת השקל, והיורו התחזק ב-
+                            <span class="inlineCalcResult eurChange"></span>.
+                            ממוצע השינויים הוא
+                            <span class="inlineCalcResult changeAvg"></span>.
+                        </li>
+                        <li>
+                            <a href="https://www.boi.org.il/media/cb3fnfen/chap-321.pdf">בנק ישראל מעריך</a>
+                             שכ-20% מהתחזקות הדולר והיורו "מתגלגל" למדד המחירים לצרכן.
+                        </li>
+                        <li>
+                            <a href="https://www.cbs.gov.il/he/publications/DocLib/2022/macro_q202203/h_print.pdf" target="_blank">
+                                מפרסום הלשכה המרכזית לסטטיסטיקה ברבעון של מקרו כלכלה יולי-ספטמבר 2022 
+                            </a>
+                            עולה כי ההוצאה הממוצעת לצריכה פרטית לנפש ב-3 הרבעונים הראשונים של 2022 היתה 67,408 ₪.
+                             סכום זה אולי נראה גבוה, אך יש לזכור שהוא כולל גם הוצאות מגורים (משכנתא/שכר דירה), ורכב.
+                              לפי נתונים אלו, ניתן לגזור כי ההוצאה הממוצעה לצריכה פרטית לנפש ב-2022 היתה כ-91,162₪. בהתאמה למשפחה מדובר על כ-339 אלף ₪ לשנה. 
+                        </li>
+                        <li class="qed">
+                            לפיכך תוספת העלות השנתית למשפחה ממוצעת בשנה הקרובה הנובעת מהתחזקות הדולר והיורו היא כ-
+                            <span class="inlineCalcResult avgFamilyCost"></span>. 
+                        </li>
+                    </ul>
+                    <h2>נתוני מקרו</h2>
+                    <table class="table table-dark table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>גורם</th>
+                                <th>ערך נוכחי</th>
+                                <th>ערך 4/1/2023</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>תל אביב 125</th>
+                                <td id="tdTA125"></td>
+                                <td id="tdTA125Start"></td>
+                            </tr>
+                            <tr>
+                                <th>S&P 500</th>
+                                <td id="tdGspc"></td>
+                                <td id="tdGspcStart"></td>
+                            </tr>
+                            <tr>
+                                <th>שער הדולר</th>
+                                <td id="tdUsdIls"></td>
+                                <td id="tdUsdIlsStart"></td>
+                            </tr>
+                            <tr>
+                                <th>שער היורו</th>
+                                <td id="tdEurIls"></td>
+                                <td id="tdEurIlsStart"></td>
+                            </tr>
+                            <tr>
+                                <th>תאריך עדכון</th>
+                                <td id="tdUpdateDate" colspan="2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

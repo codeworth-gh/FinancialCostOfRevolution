@@ -55,6 +55,8 @@ header .grayBar img {
   height: 20px;
 }
 header .titleSection {
+  position: relative;
+  overflow: hidden;
   text-align: center;
   background: rgb(49, 120, 212);
   background: linear-gradient(180deg, rgb(49, 120, 212) 0%, rgb(17, 44, 77) 100%);
@@ -62,7 +64,6 @@ header .titleSection {
   border-radius: 0 0 19px 19px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
   padding: 0 0 1rem 0;
-  position: relative;
 }
 header .titleSection img.bankImage {
   color: white;
