@@ -17,7 +17,7 @@ const USD_ILS_START = 3.527;
 const EUR_ILS_START = 3.74;
 const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 
-const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
+const CUR_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
 const NUM_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
 
 function setup(){
@@ -107,8 +107,8 @@ function updateResults() {
     let avgFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*AVG_PERSON_YR_SPEND*AVG_FAMILY_SIZE;
     let myFamilyCost = changeAvg*FNX_INFLATION_TRANSMISSION_RATE*(1-monthlySavePct)*monthlyIncome*12;
     
-    controls.lbl.monthlySave.innerHTML = CUR_FORMAT.format(monthlyIncome*monthlySavePct) + "  (" + String(monthlySave) + "%)";
-    controls.results.avgFamilyCost.innerHTML = CUR_FORMAT.format(avgFamilyCost);
+    controls.lbl.monthlySave.innerHTML = "כ-" + String(monthlySave) + "%";
+    controls.results.avgFamilyCost.innerHTML = NUM_FORMAT.format(avgFamilyCost);
     controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyCost);
     updateExplanationPct(".usdChange", usdChange);
     updateExplanationPct(".eurChange", eurChange);
