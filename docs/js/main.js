@@ -71,7 +71,7 @@ function updateResults() {
     let familyMarketLoss = tlvVsSnp*savings*AVG_STOCK_PART;
     let avgFamilyMarketLoss = lossPerPerson*AVG_FAMILY_SIZE;
     
-    controls.results.avgFamilyLoss.innerHTML = CUR_FORMAT.format(-avgFamilyMarketLoss);
+    controls.results.avgFamilyLoss.innerHTML = NUM_FORMAT.format(-avgFamilyMarketLoss);
     controls.results.myFamilyLoss.innerHTML = CUR_FORMAT.format(-familyMarketLoss);
     updateExplanationPct( ".TA125Change", tlvChange );
     updateExplanationPct( ".gspcChange", gspcChange );
@@ -93,7 +93,7 @@ function updateResults() {
     
     controls.lbl.monthlySave.innerHTML = "כ-" + String(monthlySave) + "%";
     controls.results.avgFamilyCost.innerHTML = NUM_FORMAT.format(avgFamilyCost);
-    controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyCost);
+    controls.results.myFamilyCost.innerHTML = CUR_FORMAT.format(myFamilyCost) + " לשנה";
     updateExplanationPct(".usdChange", usdChange);
     updateExplanationPct(".eurChange", eurChange);
     updateExplanationPct(".changeAvg", changeAvg);
