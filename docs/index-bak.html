@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>חדר המצב הכלכלי - ההשפעה הכלכלית של המהפיכה המשפטית על הציבור בישראל</title>
+    <title>חדר המצב הכלכלי - כמה זה עולה לנו: ההשפעה הכלכלית של המהפיכה המשפטית על הציבור בישראל</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css?1000">
+    <link rel="stylesheet" href="css/main.css?1003">
     <link rel="icon" type="image/png" href="icon.png">
   </head>
   <body>
@@ -20,12 +20,8 @@
             <img src="bank.svg" class="bankImage bankImage-right" alt="bank image">
             <div class="row justify-content-center">
                 <div class="col-sm-8">
-                    <h1>השפעת המהפיכה במספרים</h1>
+                    <h1>כמה זה עולה לנו?</h1>
                     <h2>ההשפעה הכלכלית של המהפיכה המשפטית על הציבור בישראל מיום פרסומה ועד היום</h2>
-                    <hr>
-                    <div class="remark">
-                        איסוף הנתונים והחישובים בוצעו על ידי כלכלנים בעלי נסיון רב בשוק ההון ובתפקידים מקרו כלכליים
-                    </div>
                 </div>
             </div>
         </div>
@@ -34,31 +30,32 @@
         <div class="row my-3">
             <div class="col-md-6">
                 <div class="costStatement">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                    </svg>
-                    <span class="title">
-                        תוספת עלות שנתית ליוקר המחיה
-                        עבור משפחה ישראלית ממוצעת
-                    </span>
-                    <span class="semicolon">:</span>
-                    <sup>כ-</sup>
-                    <span class="sum" id="avgFamilyCost"></span>
-                    <sub>₪</sub>
+                    <div class="top">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" class="bi upwards" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                        </svg>
+                        <sup>כ-</sup>
+                        <span class="sum" id="avgFamilyCost"></span>
+                        <sub>₪ בשנה</sub>
+                    </div>
+                    <div class="bottom">
+                        תוספת עלות שנתית ליוקר המחיה עבור משפחה ישראלית ממוצעת
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="costStatement">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                    </svg>
-                    <span class="title">
-                        נזקים ישירים למשפחה ממוצעת כתוצאה מנפילת שוק המניות
-                    </span>
-                    <span class="semicolon">:</span>
-                    <sup>כ-</sup>
-                    <span class="sum" id="avgFamilyLoss"></span>
-                    <sub>₪</sub>
+                    <div class="top">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                        </svg>
+                        <sup>כ-</sup>
+                        <span class="sum" id="avgFamilyLoss"></span>
+                        <sub>₪</sub>
+                    </div>
+                    <div class="bottom">
+                        נזקים ישירים למשפחה ממוצעת כתוצאה מנפילת שוק המניות, כולל לפקדונות ולפנסיה
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,7 +65,7 @@
                     <hr class="d-none d-md-block">
                     <p>
                         זו ההשפעה הכלכלית למשפחה ממוצעת בישראל.
-                        <strong>בואו לבדוק אצלכם.</strong>
+                        <strong>בואו לבדוק כמה זה יעלה לכם.</strong>
                     </p>
                     <hr class="d-none d-md-block">
                 </div>
@@ -77,27 +74,23 @@
         <div class="row my-3">
             <div class="col-md-6">
                 <div class="grayBox">
-                    <h3>ההשפעה הכלכלית על יוקר המחיה</h3>
-                    <p>מהי ההכנסה החודשים הממוצעת (לכל המשפחה)?</p>
+                    <h3>בכמה יעלה יוקר המחיה שלי?</h3>
+                    <p>מהי ההכנסה החודשית הממוצעת (לכל התא המשפחתי)?</p>
                     <select id="sltFamilyIncome" class="form-select" onchange="updateResults()">
-                        <option value="95000">בין 90,000₪ ל-100,000₪</option>
-                        <option value="85000">בין 80,000₪ ל-90,000₪</option>
-                        <option value="75000">בין 70,000₪ ל-80,000₪</option>
-                        <option value="65000">בין 60,000₪ ל-70,000₪</option>
-                        <option value="55000">בין 50,000₪ ל-60,000₪</option>
-                        <option value="45000" selected>בין 40,000₪ ל-50,000₪</option>
-                        <option value="35000">בין 30,000₪ ל-40,000₪</option>
-                        <option value="25000">בין 20,000₪ ל-30,000₪</option>
-                        <option value="15000">בין 10,000₪ ל-20,000₪</option>
-                        <option value="10000">כ-10,000₪</option>
+                        <option value="100000">מעל 75,000 ₪</option>
+                        <option value="62500">50-75,000 ₪</option>
+                        <option value="42500">35-50,000 ₪</option>
+                        <option value="27500" selected>20-35,000 ₪</option>
+                        <option value="15000">10-20,000 ₪</option>
+                        <option value="10000">עד 10,000 ₪</option>
                     </select>
                     <p>
                         להערכתכם, כמה אחוזים מתוך ההכנסה החודשית מועברים לחסכון?
                     </p>
                     <div class="sliderGrid">
-                        <input type="range" min="0" max="100" autocomplete="off" class="form-range" 
-                                oninput="updateResults()" id="fldMonthlySave" value="5">
-                        <label id="lblMonthlySave">5</label>
+                        <input type="range" min="0" max="50" step="10" autocomplete="off" class="form-range" 
+                                oninput="updateResults()" id="fldMonthlySave" value="10">
+                        <label id="lblMonthlySave">10</label>
                     </div>
                     <div class="calcPill">
                         <span>חישוב</span>
@@ -108,23 +101,22 @@
                 <div class="grayBox grayBox-bottom">
                     <div class="calcResult" id="myFamilyCost">???</div>
                     <p>
-                        זהו הסכום המוערך שיתווסף להוצאות השוטפות שלכם לשנת 2023 כתוצאה מעליית הדולר והיורו.
+                        התוספת ליוקר המחיה השנתי שלכם כתוצאה מעליית הדולר והיורו, ממועד הצגת המהפיכה המשפטית ועד היום.
                     </p>
                     <a href="#explanation" class="explanation">?</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="grayBox">
-                    <h3>ההשפעה הכלכלית על החסכונות</h3>
+                    <h3>כמה הפסדתי בפנסיה?</h3>
                     <p>כמה כסף, להערכתכם, חסכתם בקרנות פנסיה, קרנות השתלמות, קופות גמל, וחסכונות אחרים?</p>
                     <select id="sltFamilySavings" class="form-select" onchange="updateResults()">
-                        <option value="1375000">בין 1,250,000₪ ל-1,500,000₪</option>
-                        <option value="1125000">בין 1,000,000₪ ל-1,250,000₪</option>
-                        <option  value="825000">בין 750,000₪ ל-1,000,000₪</option>
-                        <option  value="625000">בין 500,000₪ ל-750,000₪</option>
-                        <option  value="375000">בין 250,000₪ ל-500,000₪</option>
-                        <option  value="125000" selected>בין 100,000₪ ל-250,000₪</option>
-                        <option   value="75000">כ-100,000₪</option>
+                        <option value="6000000">מעל 4 מיליון ₪</option>
+                        <option  value="3000000">2-4 מיליון ₪</option>
+                        <option  value="1500000">1-2 מיליון ₪</option>
+                        <option  value="750000">500 אלף עד מיליון ₪</option>
+                        <option  value="300000" selected>200-500 אלף ₪</option>
+                        <option   value="150000">עד 200 אלף ₪</option>
                     </select>
                     <div class="calcPill">
                         <span>חישוב</span>
@@ -135,7 +127,7 @@
                 <div class="grayBox grayBox-bottom">
                     <div class="calcResult" id="myFamilyLoss">1000</div>
                     <p>
-                        זהו סכום ההפסד המוערך עבורכם כתוצאה מנפילת שוק המניות עד כה.
+                        זהו ההפסד שלכם כתוצאה מנפילת שוק המניות ממועד הצגת המהפיכה המשפטית ועד היום.
                     </p>
                     <a href="#explanation" class="explanation">?</a>
                 </div>
@@ -285,8 +277,8 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="js/rates.js?__C15681C__"></script>
-    <script src="js/main.js?1000"></script>
+    <script src="js/rates.js?__C28872C__"></script>
+    <script src="js/main.js?1003"></script>
     <script>
         if ( document.readyState!=='loading' ){
             // document loaded; execute now
