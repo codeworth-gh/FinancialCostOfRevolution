@@ -270,8 +270,8 @@ footer ul li a:active {
   top: 57px;
   z-index: 1000;
   margin: auto;
-  background-color: #505045;
   color: white;
+  background-color: #505045;
   height: 52px;
   width: 152px;
   display: grid;
@@ -372,6 +372,23 @@ a.explanation-inline {
 }
 select.form-select {
   background-position-x: left 0.75rem;
+}
+
+.backToRestart {
+  text-align: center;
+}
+.backToRestart a {
+  text-decoration: none;
+  background-color: #EEF;
+  display: block;
+}
+.backToRestart a:hover {
+  background-color: #FFE;
+  color: #505045;
+}
+.backToRestart a:active {
+  background-color: #FFE;
+  color: #f31616;
 }
 
 /*# sourceMappingURL=main.css.map */

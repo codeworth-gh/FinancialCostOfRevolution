@@ -35,6 +35,11 @@ function setup(){
     controls.results.avgFamilyCost = document.getElementById("avgFamilyCost");
     controls.results.myFamilyCost = document.getElementById("myFamilyCost");
     
+    // when embedded, remove the "back-to-restart banner"
+    if ( window.top != window ) {
+        document.querySelectorAll(".backToRestart").forEach( e=>e.remove() );
+    }
+
     updateScrapedData();
 }
 

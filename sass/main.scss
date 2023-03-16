@@ -51,6 +51,7 @@ $calcBlue:#123eee;
 $calcPillHeight: 52px;
 $alertRed: #f31616;
 $calcGray: #2b2b2b;
+$calcPillGray: #505045;
 
 body {
     direction: rtl;
@@ -313,8 +314,9 @@ footer {
     top: $calcPillHeight+5;
     z-index: 1000;
     margin: auto;
-    background-color:  #505045;//  $calcBlue;
+    // border: 2px solid $calcPillGray;
     color: white;
+    background-color: $calcPillGray;
     height: $calcPillHeight;
     width: 152px;
     display: grid;
@@ -430,4 +432,22 @@ $bankOffset: calc(-1 * $bankSize / 8*3);
 
 select.form-select {
     background-position-x: left 0.75rem;
+}
+
+.backToRestart {
+    text-align: center;
+    a {
+        text-decoration: none;
+        background-color: #EEF;
+        display: block;
+        
+        &:hover {
+            background-color: #FFE;
+            color: $calcPillGray;
+        }
+        &:active {
+            background-color: #FFE;
+            color: $alertRed;
+        }
+    }
 }
