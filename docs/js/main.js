@@ -18,6 +18,14 @@ const USD_ILS_START = 3.527;
 const EUR_ILS_START = 3.74;
 const FNX_INFLATION_TRANSMISSION_RATE = 0.2;
 
+/// Bonds
+GOV_DEBT_2021 = 1044000000000;
+GOV_DEBT_USD = 0.7*GOV_DEBT_2021;
+GOV_DEBT_EUR = 0.3*GOV_DEBT_2021;
+
+/// /Bonds
+
+
 const CUR_FORMAT = new Intl.NumberFormat("IW-il", {style:"currency", currency:"ILS", maximumSignificantDigits:3});
 const NUM_FORMAT = new Intl.NumberFormat("IW-il", {maximumSignificantDigits:3});
 

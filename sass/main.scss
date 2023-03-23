@@ -63,6 +63,8 @@ body {
 }
 
 header {
+    overflow: hidden;
+    
     .grayBar {
         height: $grayBarHeight;
         background-color: #dcdcdc;

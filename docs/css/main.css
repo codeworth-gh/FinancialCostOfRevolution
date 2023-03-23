@@ -39,6 +39,9 @@ body {
   font-family: "calibri", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+header {
+  overflow: hidden;
+}
 header .grayBar {
   height: 40px;
   background-color: #dcdcdc;
