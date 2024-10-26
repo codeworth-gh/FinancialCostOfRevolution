@@ -1,6 +1,6 @@
-const GSPC=5797.42;
+const GSPC=5809.86;
 const TA_125=2152.97;
-const USD_ILS=3.7933;
-const EUR_ILS=4.0905;
-const SAMPLE_TIME="Thu Oct 24 00:59:53 UTC 2024";
+const USD_ILS=3.7858;
+const EUR_ILS=4.0987;
+const SAMPLE_TIME="Fri Oct 25 00:58:43 UTC 2024";
 
