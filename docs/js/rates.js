@@ -1,6 +1,6 @@
-const GSPC=6049.24;
-const TA_125=2592.85;
-const USD_ILS=3.5531;
-const EUR_ILS=3.7019;
-const SAMPLE_TIME="Wed Jan 22 00:58:36 UTC 2025";
+const GSPC=6086.37;
+const TA_125=2574.74;
+const USD_ILS=3.5318;
+const EUR_ILS=3.6785;
+const SAMPLE_TIME="Thu Jan 23 00:57:25 UTC 2025";
 
