@@ -2,5 +2,5 @@ const GSPC=;
 const TA_125=;
 const USD_ILS=;
 const EUR_ILS=;
-const SAMPLE_TIME="Tue Sep 2 01:05:11 UTC 2025";
+const SAMPLE_TIME="Wed Sep 3 01:01:14 UTC 2025";
 
